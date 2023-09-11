@@ -34,22 +34,18 @@ def main():
     print(df)
 
     total_marks_count = get_total_marks_count(df)
-    print('В исходном датасете содержалось', total_marks_count, 'оценок')
-
     PI101_group_marks_count = get_PI101_group_marks_count(df)
-    print('Из них', PI101_group_marks_count, 'оценок относятся к группе ПИ101')
+    print('В исходном датасете содержалось', total_marks_count, 'оценок, из них', PI101_group_marks_count, 'оценок относятся к группе ПИ101')
 
     students_ids_count = get_students_ids_count(df)
-    print('В датасете находятся оценки', students_ids_count,'студентов со следующими личными номерами(По ПИ101):')
-
     PI101_group_students_ids = get_PI101_group_students_ids(df)
-    print(PI101_group_students_ids)
+    print('В датасете находятся оценки', students_ids_count,'студентов со следующими личными номерами(По ПИ101):', ", ".join(map(str, PI101_group_students_ids)))
 
     forms_of_control = get_unique_forms_of_control(df)
-    print('Используемые формы контроля:', forms_of_control)
+    print('Используемые формы контроля:', ', '.join(map(str,forms_of_control)))
     
     years = get_data_interval(df)
     years.sort()
-    print('Данные представлены по следующим учебным годам:', years)
+    print('Данные представлены по следующим учебным годам:',', '.join(map(str,years)))
 
 main()
