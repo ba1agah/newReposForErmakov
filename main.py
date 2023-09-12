@@ -11,7 +11,6 @@ def get_PI101_group_marks_count(df):
 def get_students_ids_count(df):
     students_ids = df.loc[df['Группа'] == 'ПИ101', 'Личный номер студента'].nunique()
     return students_ids
-    print ('-------------------------------------------------------------------------------------------')
 
 def get_PI101_group_students_ids(df):
     PI101_group_students_ids = df.loc[df['Группа'] == 'ПИ101', 'Личный номер студента'].unique().tolist()
